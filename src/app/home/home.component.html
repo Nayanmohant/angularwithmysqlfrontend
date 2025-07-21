@@ -1,0 +1,44 @@
+<h1 class="text-center text-primary">userlist</h1>
+<div class="container">
+ <button (click)="gotoadd()" type="button" class="btn btn-primary">Add+</button>
+</div>
+<div class="mt-5 container">
+    <table class="table table-bordered border-primary table-responsive">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>Gender</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @for (item of users; track $index) {
+                <tr>
+         <!-- <tr id="cv-{{item.id}}"> -->
+            <!-- <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.gender}}</td>
+            <td>
+                <button [routerLink]="['/edit',item.id]"  type="button" class="btn btn-primary mx-3">Edit</button>
+                 <button (click)="deleteuser(item.id)" class="btn btn-primary">Delete</button>
+                  <button (click)="downloadcv(item)" class="btn btn-primary">Download</button>
+            </td> --> 
+             <td colspan="4">
+    <div id="cv-{{item.id}}" style="padding: 10px; background: #fff;">
+      <h4>Name: {{item.name}}</h4>
+      <p>Email: {{item.email}}</p>
+      <p>Gender: {{item.gender}}</p>
+      Add more fields if needed
+    </div>
+
+    <button (click)="downloadcv(item)" class="btn btn-primary mt-2">Download CV</button>
+    <button [routerLink]="['/edit',item.id]" class="btn btn-secondary mt-2 mx-2">Edit</button>
+    <button (click)="deleteuser(item.id)" class="btn btn-danger mt-2">Delete</button> 
+  </td> 
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
