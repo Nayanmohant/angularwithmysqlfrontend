@@ -15,7 +15,8 @@ export interface User{
 })
 export class ApiService {
 
-    private Api='http://localhost:4000'
+    // private Api='http://localhost:4000'
+     private Api='https://angularwithmysql-3.onrender.com'
 
 
   constructor(private http:HttpClient) { }
